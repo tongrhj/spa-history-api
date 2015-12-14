@@ -1,0 +1,11 @@
+.highlight {
+  color: red;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+#products, #about, #error {
+  visibility: hidden;
+}
