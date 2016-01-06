@@ -1,15 +1,32 @@
 {
   "name": "spa-history-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Single Page App",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run watch-js & nodemon server.js",
+    "build-js": "mkdir -p dist && browserify app.js --transform babelify --outfile dist/app.js",
+    "watch-js": "watchify app.js -t babelify --outfile dist/app.js -v -d"
   },
-  "author": "",
+  "author": "Jared Tong <hello@jaredtong.com> http://github.com/tongrhj",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "browserify": "^12.0.1",
     "express": "^4.13.3",
-    "express-history-api-fallback": "^2.0.0"
+    "express-history-api-fallback": "^2.0.0",
+    "nodemon": "^1.8.1",
+    "soup-router": "^1.1.0",
+    "watchify": "^3.6.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babelify": "^7.2.0",
+    "standard": "^5.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tongrhj/spa-history-api.git"
   }
 }
